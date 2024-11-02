@@ -24,7 +24,18 @@ cd etl-data-processing/docker
 
 ### 2. Configure the `.env` File
 
-In the `docker/` directory, create a file called `.env` and define all the necessary environment variables. Below is an example of what the `.env` file should look like:
+In the `docker/` directory, create a file called `.env` and define all the necessary environment variables. 
+
+- Generate the Fernet Key:
+Ensure you have Python installed, then run the following command in your terminal:
+```bash
+python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+```
+- This command will output a secure Fernet Key, for example:
+```bash
+y3u8QzZKk0YhL1t0a9BfZJ3gHk9D3V0YhL1t0a9BfZJ3gHk9D3V0==
+```
+Below is an example of what the `.env` file should look like:
 
 ```bash
 # PostgreSQL
